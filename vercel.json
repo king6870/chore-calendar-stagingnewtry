@@ -4,10 +4,5 @@
       "NODE_ENV": "production",
       "VERCEL": "1"
     }
-  },
-  "functions": {
-    "app/api/**/*.ts": {
-      "maxDuration": 30
-    }
   }
 }
