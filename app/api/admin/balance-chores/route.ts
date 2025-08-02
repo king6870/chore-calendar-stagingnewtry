@@ -249,11 +249,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Week start parameter required' }, { status: 400 });
     }
 
-    // Get user and verify family access
-    const user = await prisma.user.findUnique({
-      where: { id: user.id }
-    });
-
+    // Verify family access
     if (!user?.familyId) {
       return NextResponse.json({ error: 'User not in a family' }, { status: 400 });
     }
